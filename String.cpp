@@ -6,7 +6,7 @@
 
 String::String()
 {
-	std::cout << "\nDefault String Class Created" << std::endl;
+	std::cout << "Default String Class Created" << std::endl;
 
 	char string[] = "default";
 
@@ -14,18 +14,18 @@ String::String()
 
 	this->str = string;
 
-	std::cout << "String reads: " << this->str << "\n" << std::endl;
+	std::cout << "String reads: " << this->str << std::endl;
 }
 
 String::String(const char *str)
 {
-	std::cout << "\nString Class Created" << std::endl;
+	std::cout << "String Class Created" << std::endl;
 
 	this->str = new char[strlen(str + 1)];
 
 	strcpy(this->str, str);
 
-	std::cout << "String reads: " << this->str << "\n" << std::endl;
+	std::cout << "String reads: " << this->str << std::endl;
 }
 
 String::String(const String &other)
@@ -37,7 +37,7 @@ String::String(const String &other)
 
 String::~String()
 {
-	std::cout << "\n" << str << " Destroyed\n" << std::endl;
+	std::cout << str << " Destroyed" << std::endl;
 
 	delete[] str;
 }
@@ -143,5 +143,60 @@ void String::ToUpper()
 	return;
 }
 
+size_t String::Find(const char *tofind)
+{
+	size_t i = 0;
+	int j;
 
+	while(str[i] != '\0')
+	{
+		j = 0;
+		while(tofind[j] == str[i + j])
+		{
+			if (tofind[j + 1] == '\0')
+			{
+				return(i + 1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (-1);
+}
 
+size_t String::Find(size_t startIndex, const char *tofind)
+{
+	size_t i = startIndex;
+	int j;
+
+	while(str[i] != '\0')
+	{
+		j = 0;
+		while(tofind[j] == str[i + j])
+		{
+			if (tofind[j + 1] == '\0')
+			{
+				return(i + 1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (-1);
+}
+
+void String::Replace(const char *tofind, const char *toreplace)
+{
+	//ugh. memory allocation. find how many instances of the substring exist. find the difference in memory
+	int findcount = 0;
+	int i = 0;
+
+	while(str[i])
+	{
+
+	}
+
+	
+
+	return;
+}

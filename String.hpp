@@ -25,9 +25,7 @@ public:
 
 	char CharacterAt(size_t index);
 
-	//const char &CharacterAt(size_t index) const;
-
-	bool EqualTo(const String& other) const;
+	bool EqualTo(const String &other) const;
 
 	void Append(const String &other);
 	void Prepend(const String &other);
@@ -37,10 +35,10 @@ public:
 	void ToLower();
 	void ToUpper();
 
-	size_t Find(const String& str);
-	size_t Find(size_t _startIndex, const String& str);
+	size_t Find(const char *tofind);
+	size_t Find(size_t startIndex, const char *tofind);
 
-	String& Replace(const String& _find, const String& replace);
+	void Replace(const char *tofind, const char *toreplace);
 
 	String& ReadFromConsole();
 	String& WriteToConsole();
