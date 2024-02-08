@@ -3,6 +3,7 @@
 #define STRING_HPP
 
 #include <iostream>
+#include <string.h>
 
 class String
 {
@@ -17,43 +18,41 @@ public:
 	~String();
 
 	//Vars
-	const char *str;
+	char *str;
 
-//public:
-
-	
+	//Funcs
 	size_t Length() const;
 
 	char CharacterAt(size_t index);
 
-	const char& CharacterAt(size_t _index) const;
+	//const char &CharacterAt(size_t index) const;
 
-	bool EqualTo(const String& _other) const;
+	bool EqualTo(const String& other) const;
 
-	String& Append(const String& _str);
-	String& Prepend(const String& _str);
+	void Append(const String &other);
+	void Prepend(const String &other);
 
 	const char* CStr() const;
 
-	String& ToLower();
-	String& ToUpper();
+	void ToLower();
+	void ToUpper();
 
-	size_t Find(const String& _str);
-	size_t Find(size_t _startIndex, const String& _str);
+	size_t Find(const String& str);
+	size_t Find(size_t _startIndex, const String& str);
 
-	String& Replace(const String& _find, const String& _replace);
+	String& Replace(const String& _find, const String& replace);
 
 	String& ReadFromConsole();
 	String& WriteToConsole();
 
 public:
-	bool operator==(const String& _other);
-	bool operator!=(const String& _other);
+	bool operator==(const String& other);
+	bool operator!=(const String& other);
 
-	String& operator=(const String& _str);
+	String& operator=(const String& str);
 
-	char& operator[](size_t _index);
-	const char& operator[](size_t _index) const;
+	char& operator[](size_t index);
+	const char& operator[](size_t index) const;
 
 
 private:
