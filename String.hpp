@@ -35,10 +35,10 @@ public:
 	void ToLower();
 	void ToUpper();
 
-	size_t Find(const char *tofind);
-	size_t Find(size_t startIndex, const char *tofind);
+	size_t Find(const String &tofind);
+	size_t Find(size_t startIndex, const String &tofind);
 
-	void Replace(const char *tofind, const char *toreplace);
+	void Replace(const String &tofind, const String &toreplace);
 
 	String& ReadFromConsole();
 	String& WriteToConsole();

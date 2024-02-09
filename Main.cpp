@@ -8,18 +8,48 @@ int main()
 		std::cout << hellostring.CStr() << std:: endl;
 	}
 
+	{
+		String boring;
+		String construct("Peanuts");
+		String duplicate(construct);
+	}
+
 	std::cout << std::endl;
 
-	//char str[] = "beans";
+	{
+		String lenstr("12345");
+		std::cout << "Length of String: \"" << lenstr.CStr() << "\" is " << lenstr.Length() << std::endl;
+		String longstr("1234567890");
+		std::cout << "Length of String: \"" << longstr.CStr() << "\" is " << longstr.Length() << std::endl;
+	}
 
-	//std::cout << str << std::endl;
+	std::cout << std::endl;
 
-	String mystring("Cats Meow Cats ");
-	String otherstring("Cats Meow Cats");
-	String wrongstring("doggy");
+	{
+		String stringpos("012345");
+		std::cout << "Char at position [3] in string: \"" << stringpos.CStr() << "\" is " << stringpos.CharacterAt(3) << std::endl;
+		std::cout << "Char at position [0] in string: \"" << stringpos.CStr() << "\" is " << stringpos.CharacterAt(0) << std::endl;
+	}
 
-	std::cout << "\nLength is " << mystring.Length() << std::endl;
-	std::cout << "Third character (position [2]) is " << mystring.CharacterAt(2) << std::endl;
+	std::cout << std::endl;
+
+	{
+		String match1("match");
+		String match2("match");
+		if (match1.EqualTo(match2))
+		std::cout << "string \"" << match1.str << "\" IS equal to string \"" << match2.str << "\"" << std::endl;
+		else
+		std::cout << "string \"" << match1.str << "\" IS NOT equal to string \"" << match2.str << "\"" << std::endl;
+		
+		String mismatch("mismatch");
+		if (match1.EqualTo(mismatch))
+		std::cout << "string \"" << match1.str << "\" IS equal to string \"" << mismatch.str << "\"" << std::endl;
+		else
+		std::cout << "string \"" << match1.str << "\" IS NOT equal to string \"" << mismatch.str << "\"" << std::endl;
+
+	}
+
+	/*
 	
 	if (mystring.EqualTo(otherstring))
 		std::cout << "string \"" << mystring.str << "\" IS equal to string \"" << otherstring.str << "\"" << std::endl;
@@ -45,11 +75,11 @@ int main()
 	mystring.ToLower();
 	std::cout << "To lower: " << mystring.str << std::endl;
 
-	std::cout << "Find location of 'doggy' inside 'catsdoggy': " << mystring.Find("doggy") << std::endl;
+	std::cout << "Find location of 'doggy' inside 'catsdoggy': " << mystring.Find(String foundstring("doggy")) << std::endl;
 
 	
 	std::cout << "Done :3\n" << std::endl;
-
+	*/
 
 	return 0;
 }
