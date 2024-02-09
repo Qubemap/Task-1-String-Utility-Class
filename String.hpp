@@ -43,7 +43,10 @@ public:
 	String& ReadFromConsole();
 	String& WriteToConsole();
 
+	String& operator + (const String &other);
+
 public:
+	/*
 	bool operator==(const String& other);
 	bool operator!=(const String& other);
 
@@ -51,7 +54,7 @@ public:
 
 	char& operator[](size_t index);
 	const char& operator[](size_t index) const;
-
+	*/
 
 private:
 

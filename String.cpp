@@ -12,7 +12,7 @@ String::String()
 
 	strcpy(this->str, def);
 
-	std::cout << "Default String Object \"" << this->str << "\" created" << std::endl;
+	//std::cout << "Default String Object \"" << this->str << "\" created" << std::endl;
 }
 
 String::String(const char *str)
@@ -21,7 +21,7 @@ String::String(const char *str)
 
 	strcpy(this->str, str);
 
-	std::cout << "String Object \"" << this->str << "\" created" << std::endl;
+	//std::cout << "String Object \"" << this->str << "\" created" << std::endl;
 }
 
 String::String(const String &other)
@@ -30,14 +30,14 @@ String::String(const String &other)
 
 	strcpy(this->str, other.str);
 
-	std::cout << "Copied String Object \"" << this->str << "\" created" << std::endl;
+	//std::cout << "Copied String Object \"" << this->str << "\" created" << std::endl;
 }
 
 //Destructor
 
 String::~String()
 {
-	std::cout << "\""<< str << "\" Destroyed" << std::endl;
+	//std::cout << "\""<< str << "\" Destroyed" << std::endl;
 
 	delete[] str;
 }
@@ -126,7 +126,9 @@ void String::ToLower()
 	for (int i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
 			str[i] = str[i] + 32;
+		}
 	}
 
 	return;
@@ -185,20 +187,68 @@ size_t String::Find(size_t startIndex, const String &tofind)
 	return (-1);
 }
 
-/*
+
 void String::Replace(const String &tofind, const String &toreplace)
 {
 	//ugh. memory allocation. find how many instances of the substring exist. find the difference in memory
 	int findcount = 0;
-	int i = 0;
+	int index = 0;
 
-	while(str[i])
+	while (Find(index, tofind.str) != -1)
 	{
-
+		index = Find(index, tofind.str) + 1;
+		findcount++;
 	}
 
-	
+	//std::cout << findcount << " FOUND" << std::endl;
+
+	if (findcount == 0)
+	{
+		std::cout << "no findcount" << std::endl;
+		return;
+	}
+
+	int strdiff = (strlen(toreplace.str) - strlen(tofind.str));
+
+	String tempstr(this->str);
+
+	delete[] str;
+
+	size_t total = (strlen(tempstr.str) + (strdiff * findcount));
+	this->str = new char[total + 1];
+
+	//std::cout << "total is " << total << std::endl;
+
+	index = tempstr.Find(tofind);
+	int i = 0;
+	int j = 0;
+	int k = 0;
+
+	while (i < total)
+	{
+		if (k == index - 1)
+		{
+			j = 0;
+			while(toreplace.str[j] != '\0')
+			{
+				str[i + j] = toreplace.str[j];
+				j++;
+			}
+
+			index++;
+			index = tempstr.Find(index, tofind);
+			i = i + strlen(toreplace.str);
+			k = k + strlen(tofind.str);
+		}
+		else
+		{
+			str[i] = tempstr.str[k];
+			i++;
+			k++;
+		}
+		
+	}
 
 	return;
 }
-*/
+

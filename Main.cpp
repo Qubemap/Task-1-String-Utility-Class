@@ -46,40 +46,66 @@ int main()
 		std::cout << "string \"" << match1.str << "\" IS equal to string \"" << mismatch.str << "\"" << std::endl;
 		else
 		std::cout << "string \"" << match1.str << "\" IS NOT equal to string \"" << mismatch.str << "\"" << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	{
+		String add("Oldman ");
+		String name("Gary ");
+		String altname(name);
+		name.Append(add);
+		std::cout << "appended string is " << name.str << std::endl;
+		altname.Prepend(add);
+		std::cout << "prepended string is " << altname.str << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	{
+		String output("meow");
+		std::cout << "str is: " << output.CStr() << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	{
+		String mix("lowercase UPPERCASE m|x3D% ");
+		String mix2(mix);
+		std::cout << "String: " << mix.str << std::endl;
+		mix.ToUpper();
+		std::cout << "To upper: " << mix.str << std::endl;
+		mix2.ToLower();
+		std::cout << "To lower: " << mix2.str << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	{
+		String wally("blah HERE blah blah HERE blah HERE");
+		String tofind("HERE");
+
+		std::cout << "First occurrence of \"" << tofind.CStr() << "\" in \"" << wally.CStr() << "\" is at position " << wally.Find(tofind) << std::endl;
+
+		std::cout << "Occurrence of \"" << tofind.CStr() << "\" starting from index of 7 in \"" << wally.CStr() << "\" is at position " << wally.Find(7, tofind) << std::endl;
+
+		String toreplace("chimichangas");
+
+		wally.Replace(tofind, toreplace);
+		std::cout << "replacing \"" << tofind.CStr() << "\" with \"" << toreplace.CStr() << "\": " << wally.CStr() << std::endl;
+		std::cout << "NOTE: currently broken if replace is smaller than find value :(" << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	{
+		String one("Gary ");
+		String two("Oldman");
+		
+		
 
 	}
 
-	/*
-	
-	if (mystring.EqualTo(otherstring))
-		std::cout << "string \"" << mystring.str << "\" IS equal to string \"" << otherstring.str << "\"" << std::endl;
-	else
-		std::cout << "string \"" << mystring.str << "\" IS NOT equal to string \"" << otherstring.str << "\"" << std::endl;
-
-	if (mystring.EqualTo(wrongstring))
-		std::cout << "string \"" << mystring.str << "\" IS equal to string \"" << wrongstring.str << "\"" << std::endl;
-	else
-		std::cout << "string \"" << mystring.str << "\" IS NOT equal to string \"" << wrongstring.str << "\"" << std::endl;
-
-	mystring.Append(wrongstring);
-	std::cout << "appended string is " << mystring.str << std::endl;
-
-	otherstring.Prepend(wrongstring);
-	std::cout << "prepended string is " << otherstring.str << std::endl;
-	
-	std::cout << "CStr thing: " << mystring.CStr() << std::endl;
-
-	mystring.ToUpper();
-	std::cout << "To upper: " << mystring.str << std::endl;
-
-	mystring.ToLower();
-	std::cout << "To lower: " << mystring.str << std::endl;
-
-	std::cout << "Find location of 'doggy' inside 'catsdoggy': " << mystring.Find(String foundstring("doggy")) << std::endl;
-
-	
-	std::cout << "Done :3\n" << std::endl;
-	*/
 
 	return 0;
 }
