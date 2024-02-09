@@ -99,13 +99,11 @@ int main()
 	std::cout << std::endl;
 
 	{
-		String one("Gary ");
-		String two("Oldman");
-		
-		
-
+		String console;
+		console.ReadFromConsole();
+		console.WriteToConsole();
 	}
-
+	
 
 	return 0;
 }

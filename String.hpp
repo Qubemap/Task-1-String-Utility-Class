@@ -40,8 +40,8 @@ public:
 
 	void Replace(const String &tofind, const String &toreplace);
 
-	String& ReadFromConsole();
-	String& WriteToConsole();
+	void ReadFromConsole();
+	void WriteToConsole();
 
 	String& operator + (const String &other);
 

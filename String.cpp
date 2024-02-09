@@ -252,3 +252,22 @@ void String::Replace(const String &tofind, const String &toreplace)
 	return;
 }
 
+/*
+void String::ReadFromConsole()
+{
+	char s;
+
+	std::cout << "Enter a string: ";
+	std::cin >> s;
+
+	this->str = new char[strlen(s + 1)];
+
+	strcpy(this->str, s);
+	
+}
+
+void String::WriteToConsole()
+{
+	std::cout << this->str << std::endl;
+}
+*/
