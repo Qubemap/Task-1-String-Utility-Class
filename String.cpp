@@ -301,9 +301,17 @@ bool String::operator<(const String& other)
 
 
 //Returns a new string that combines this string and the other string
-String& String::operator+(const String& other)
+String String::operator+(const String& other) const
 {
-	
+	char* newdata = new char[strlen(str) + strlen(other.str) + 1];
+	strcpy(newdata, str);
+	strcat(newdata, other.str);
+
+	String result(newdata);
+
+	delete[] newdata;
+
+	return result;
 }
 
 //Appends the other string to this string

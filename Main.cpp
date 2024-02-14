@@ -203,9 +203,11 @@ int main()
 		std::cout << "-= Operator + Test =-" << std::endl;
 		String s1("Hello, ");
 		String s2("World!");
+		String s3;
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
 		std::cout << "s2 reads: " << s2.CStr() << std::endl;
-		std::cout << "s1 reads: " << s1.CStr() << std::endl;
+		s3 = s1 + s2;
+		std::cout << "s3 reads: " << s3.CStr() << std::endl;
 	}
 
 	std::cout << std::endl;
