@@ -10,43 +10,38 @@ class String
 public:
 
 	//Constructors
-	String(); //Default
+	String();
 	String(const char* str);
-	String(const String& other); //Copy
+
+	String(const String& other);
 
 	//Destructor
 	~String();
 
-	//Vars
-	char *str;
-
-	//Funcs
+public:
 	size_t Length() const;
+	char& CharacterAt(size_t index);
+	const char& CharacterAt(size_t index) const;
 
-	char CharacterAt(size_t index);
+	bool EqualTo(const String& other) const;
 
-	bool EqualTo(const String &other) const;
-
-	void Append(const String &other);
-	void Prepend(const String &other);
+	String& Append(const String& other);
+	String& Prepend(const String& other);
 
 	const char* CStr() const;
 
-	void ToLower();
-	void ToUpper();
+	String& ToLower();
+	String& ToUpper();
 
-	size_t Find(const String &tofind);
-	size_t Find(size_t startIndex, const String &tofind);
+	size_t Find(const String& other);
+	size_t Find(size_t startIndex, const String& other);
 
-	void Replace(const String &tofind, const String &toreplace);
+	String& Replace(const String& find, const String& replace);
 
-	void ReadFromConsole();
-	void WriteToConsole();
-
-	String& operator + (const String &other);
+	String& ReadFromConsole();
+	String& WriteToConsole();
 
 public:
-	/*
 	bool operator==(const String& other);
 	bool operator!=(const String& other);
 
@@ -54,10 +49,17 @@ public:
 
 	char& operator[](size_t index);
 	const char& operator[](size_t index) const;
-	*/
+
+	bool operator<(const String& other);
+
+	String& operator+(const String& other);
+	String& operator+=(const String& other);
+
 
 private:
-
+	char* str;
+	size_t length;
+	size_t capacity;
 };
 
 #endif
