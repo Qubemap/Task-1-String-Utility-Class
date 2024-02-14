@@ -303,11 +303,10 @@ bool String::operator<(const String& other)
 //Returns a new string that combines this string and the other string
 String& String::operator+(const String& other)
 {
-	Append(other);
-	return *this;
+	
 }
 
-
+//Appends the other string to this string
 String& String::operator+=(const String& other)
 {
 	Append(other);
