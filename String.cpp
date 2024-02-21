@@ -212,7 +212,7 @@ String& String::Replace(const String& find, const String& replace)
 			k++;
 		}
 	}
-
+	
 	return *this;
 }
 
@@ -286,7 +286,7 @@ const char& String::operator[](size_t index) const
 	return str[index];
 }
 
-
+//Returns true if first (non-matching) is 
 bool String::operator<(const String& other)
 {
 	if (strcmp(str, other.str) < 0) //strcmp returns a negative number if the first string is less than the second
