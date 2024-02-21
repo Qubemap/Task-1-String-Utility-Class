@@ -93,3 +93,98 @@ s1 reads: Hello,
 s2 reads: World!
 s1 reads: Hello, World!
 
+=============================================
+Time: 4:17:6
+Date: 21/2/2024
+=============================================
+
+Hello, World!
+
+-= Length Test =-
+s reads: Hello, World!
+Length of s: 13
+
+-= Character At Test =-
+Character at index 3: 3
+
+-= Equal To Test =-
+s1 reads: Hello, World!
+s2 reads: Hello, World!
+
+s1 reads: Hello, 
+s2 reads: World!
+s1 reads: Hello, World!
+
+-= Prepend Test =-
+s1 reads: Hello, 
+s2 reads: World!
+s2 reads: Hello, World!
+
+-= To Lower Test =-
+s reads: MAKE me LOWER case 123%^&
+s reads: make me lower case 123%^&
+
+-= To Upper Test =-
+s reads: make me UPPER case 123%^&
+s reads: MAKE ME UPPER CASE 123%^&
+
+-= Find Test =-
+s reads: Hello, World!
+The string World is found at index 7
+
+-= Find (from index) Test =-
+s reads: Hello, World! Hello, World!
+The string World is found at index (starting from position 10) 21
+
+-= Replace Test =-
+s reads: word HERE word word HERE word HERE word
+Replacing HERE with MEOW
+s reads: word MEOW word word MEOW word MEOW word
+
+- Longer replacement word test -
+s2 reads: word HERE word word HERE word HERE word
+Replacing HERE with chimichangas
+s2 reads: word chimichangas word word chimichangas word chimichangas word
+
+- Shorter replacement word test -
+s3 reads: word HERE word word HERE word HERE word
+Replacing HERE with a
+s3 reads: word a word word a word a word
+
+-= Read and Write From Console Test =-
+You entered: LALALLALALLALLLALLA
+
+-= Operator == Test =-
+s1 reads: Hello, World!
+s2 reads: Hello, World!
+Are the strings equal? (1 being true, 0 false): 1
+
+-= Operator != Test =-
+s1 reads: Hello, World!
+s2 reads: Hello, World!
+Are the strings not equal? (1 being true, 0 false): 0
+
+-= Operator = Test =-
+s1 reads: Hello, World!
+s2 reads: Hello, World!
+s2 reads: Hello, World!
+
+-= Operator [] Test =-
+s reads: Hello, World!
+Character at index 3: l
+
+-= Operator < Test =-
+s1 reads: Hello, World!
+s2 reads: Hello, World!
+Is s1 less than s2? (1 being true, 0 false): 0
+
+-= Operator + Test =-
+s1 reads: Hello, 
+s2 reads: World!
+s3 reads: Hello, World!
+
+-= Operator += Test =-
+s1 reads: Hello, 
+s2 reads: World!
+s1 reads: Hello, World!
+
