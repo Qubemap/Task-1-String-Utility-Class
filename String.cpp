@@ -1,4 +1,4 @@
-#include "String.hpp"
+#include "String.h"
 #include <iostream>
 
 //CONSTRUCTORS
@@ -212,6 +212,8 @@ String& String::Replace(const String& find, const String& replace)
 			k++;
 		}
 	}
+
+	str[i] = '\0';
 	
 	return *this;
 }

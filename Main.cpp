@@ -1,4 +1,4 @@
-#include "String.hpp"
+#include "String.h"
 #include <iostream>
 #include <fstream>
 
@@ -50,6 +50,8 @@ int main()
 	{
 		std::cout << "-= Length Test =-" << std::endl;
 		file << "-= Length Test =-" << std::endl;
+		std::cout << "Expected Output: 13" << std::endl;
+		file << "Expected Output: 13" << std::endl;
 		String s("Hello, World!");
 		std::cout << "s reads: " << s.CStr() << std::endl;
 		file << "s reads: " << s.CStr() << std::endl;
@@ -63,6 +65,8 @@ int main()
 	{
 		std::cout << "-= Character At Test =-" << std::endl;
 		file << "-= Character At Test =-" << std::endl;
+		std::cout << "Expected Output: 3" << std::endl;
+		file << "Expected Output: 3" << std::endl;
 		String s("012345");
 		std::cout << "Character at index 3: " << s.CharacterAt(3) << std::endl;
 		file << "Character at index 3: " << s.CharacterAt(3) << std::endl;
@@ -75,6 +79,8 @@ int main()
 	{
 		std::cout << "-= Equal To Test =-" << std::endl;
 		file << "-= Equal To Test =-" << std::endl;
+		std::cout << "Expected Output: 1" << std::endl;
+		file << "Expected Output: 1" << std::endl;
 		String s1("Hello, World!");
 		String s2("Hello, World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
@@ -82,6 +88,7 @@ int main()
 		std::cout << "s2 reads: " << s2.CStr() << std::endl;
 		file << "s2 reads: " << s2.CStr() << std::endl;
 		std::cout << "Are the strings equal? (1 being true, 0 false): " << s1.EqualTo(s2) << std::endl;
+		file << "Are the strings equal? (1 being true, 0 false): " << s1.EqualTo(s2) << std::endl;
 	
 	}
 
@@ -90,6 +97,9 @@ int main()
 
 	{
 		std::cout << "-= Append Test =-" << std::endl;
+		file << "-= Append Test =-" << std::endl;
+		std::cout << "Expected Output: Hello, World!" << std::endl;
+		file << "Expected Output: Hello, World!" << std::endl;
 		String s1("Hello, ");
 		String s2("World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
@@ -107,6 +117,8 @@ int main()
 	{
 		std::cout << "-= Prepend Test =-" << std::endl;
 		file << "-= Prepend Test =-" << std::endl;
+		std::cout << "Expected Output: Hello, World! " << std::endl;
+		file << "Expected Output: Hello, World! " << std::endl;
 		String s1("Hello, ");
 		String s2("World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
@@ -124,6 +136,8 @@ int main()
 	{
 		std::cout << "-= To Lower Test =-" << std::endl;
 		file << "-= To Lower Test =-" << std::endl;
+		std::cout << "Expected Output: make me lower case 123%^&" << std::endl;
+		file << "Expected Output: make me lower case 123%^&" << std::endl;
 		String s("MAKE me LOWER case 123%^&");
 		std::cout << "s reads: " << s.CStr() << std::endl;
 		file << "s reads: " << s.CStr() << std::endl;
@@ -138,6 +152,8 @@ int main()
 	{
 		std::cout << "-= To Upper Test =-" << std::endl;
 		file << "-= To Upper Test =-" << std::endl;
+		std::cout << "Expected Output: MAKE ME UPPER CASE 123%^&" << std::endl;
+		file << "Expected Output: MAKE ME UPPER CASE 123%^&" << std::endl;
 		String s("make me UPPER case 123%^&");
 		std::cout << "s reads: " << s.CStr() << std::endl;
 		file << "s reads: " << s.CStr() << std::endl;
@@ -152,6 +168,8 @@ int main()
 	{
 		std::cout << "-= Find Test =-" << std::endl;
 		file << "-= Find Test =-" << std::endl;
+		std::cout << "Expected Output: 7" << std::endl;
+		file << "Expected Output: 7" << std::endl;
 		String s("Hello, World!");
 		String find("World");
 		std::cout << "s reads: " << s.CStr() << std::endl;
@@ -166,6 +184,8 @@ int main()
 	{
 		std::cout << "-= Find (from index) Test =-" << std::endl;
 		file << "-= Find (from index) Test =-" << std::endl;
+		std::cout << "Expected Output: 21" << std::endl;
+		file << "Expected Output: 21" << std::endl;
 		String s("Hello, World! Hello, World!");
 		String find("World");
 		std::cout << "s reads: " << s.CStr() << std::endl;
@@ -182,6 +202,8 @@ int main()
 		file << "-= Replace Test =-" << std::endl;
 		String s("word HERE word word HERE word HERE word");
 
+		std::cout << "Expected Output: word MEOW word word MEOW word MEOW word" << std::endl;
+		file << "Expected Output: word MEOW word word MEOW word MEOW word" << std::endl;
 		String find("HERE");
 		String replace("MEOW");
 		std::cout << "s reads: " << s.CStr() << std::endl;
@@ -194,6 +216,8 @@ int main()
 
 		std::cout << "- Longer replacement word test -" << std::endl;
 		file << "- Longer replacement word test -" << std::endl;
+		std::cout << "Expected Output: word chimichangas word word chimichangas word chimichangas word" << std::endl;
+		file << "Expected Output: word chimichangas word word chimichangas word chimichangas word" << std::endl;
 		String s2("word HERE word word HERE word HERE word");
 		String find2("HERE");
 		String replace2("chimichangas");
@@ -207,6 +231,8 @@ int main()
 
 		std::cout << "- Shorter replacement word test -" << std::endl;
 		file << "- Shorter replacement word test -" << std::endl;
+		std::cout << "Expected Output: word a word word a word a word" << std::endl;
+		file << "Expected Output: word a word word a word a word" << std::endl;
 		String s3("word HERE word word HERE word HERE word");
 		String find3("HERE");
 		String replace3("a");
@@ -225,6 +251,8 @@ int main()
 	{
 		std::cout << "-= Read and Write From Console Test =-" << std::endl;
 		file << "-= Read and Write From Console Test =-" << std::endl;
+		std::cout << "Expected Output: USER INPUT" << std::endl;
+		file << "Expected Output: USER INPUT" << std::endl;
 		String s;
 		std::cout << "Enter a string: ";
 		s.ReadFromConsole();
@@ -238,6 +266,8 @@ int main()
 	{
 		std::cout << "-= Operator == Test =-" << std::endl;
 		file << "-= Operator == Test =-" << std::endl;
+		std::cout << "Expected Output: 1" << std::endl;
+		file << "Expected Output: 1" << std::endl;
 		String s1("Hello, World!");
 		String s2("Hello, World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
@@ -254,6 +284,8 @@ int main()
 	{
 		std::cout << "-= Operator != Test =-" << std::endl;
 		file << "-= Operator != Test =-" << std::endl;
+		std::cout << "Expected Output: 0" << std::endl;
+		file << "Expected Output: 0" << std::endl;
 		String s1("Hello, World!");
 		String s2("Hello, World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
@@ -270,6 +302,8 @@ int main()
 	{
 		std::cout << "-= Operator = Test =-" << std::endl;
 		file << "-= Operator = Test =-" << std::endl;
+		std::cout << "Expected Output: Hello, World!" << std::endl;
+		file << "Expected Output: Hello, World!" << std::endl;
 		String s1("Hello, World!");
 		String s2 ("Hello, World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
@@ -287,6 +321,8 @@ int main()
 	{
 		std::cout << "-= Operator [] Test =-" << std::endl;
 		file << "-= Operator [] Test =-" << std::endl;
+		std::cout << "Expected Output: l" << std::endl;
+		file << "Expected Output: l" << std::endl;
 		String s("Hello, World!");
 		std::cout << "s reads: " << s.CStr() << std::endl;
 		file << "s reads: " << s.CStr() << std::endl;
@@ -300,6 +336,8 @@ int main()
 	{
 		std::cout << "-= Operator < Test =-" << std::endl;
 		file << "-= Operator < Test =-" << std::endl;
+		std::cout << "Expected Output: 0" << std::endl;
+		file << "Expected Output: 0" << std::endl;
 		String s1("Hello, World!");
 		String s2("Hello, World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
@@ -316,6 +354,8 @@ int main()
 	{
 		std::cout << "-= Operator + Test =-" << std::endl;
 		file << "-= Operator + Test =-" << std::endl;
+		std::cout << "Expected Output: Hello, World!" << std::endl;
+		file << "Expected Output: Hello, World!" << std::endl;
 		String s1("Hello, ");
 		String s2("World!");
 		String s3;
@@ -334,6 +374,8 @@ int main()
 	{
 		std::cout << "-= Operator += Test =-" << std::endl;
 		file << "-= Operator += Test =-" << std::endl;
+		std::cout << "Expected Output: Hello, World!" << std::endl;
+		file << "Expected Output: Hello, World!" << std::endl;
 		String s1("Hello, ");
 		String s2("World!");
 		std::cout << "s1 reads: " << s1.CStr() << std::endl;
